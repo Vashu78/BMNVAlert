@@ -36,6 +36,7 @@ object BMNVAlert {
             title = title,
             message = message,
             autoDismissInMillis = autoDismissInMillis,
+            drawableRes = drawableRes,
             onDismiss = onDismiss
         )
     }

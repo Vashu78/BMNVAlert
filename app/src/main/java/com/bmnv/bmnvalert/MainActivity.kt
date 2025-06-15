@@ -11,7 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.bmnv.bmnvalert.base.BMNVAlert
 import com.bmnv.bmnvalert.ui.theme.BMNVAlertTheme
+import com.bmnv.bmnvalert.utils.AlertType
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +22,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             BMNVAlertTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                    BMNVAlert.CreateConfirmationAlert(
+                        alertType = AlertType.INFO,
+                        title = "Confirmation Alert Title",
+                        message = "Confirmation Test Message",
+                        onDismiss = {},
+                        onConfirm = {}
                     )
                 }
             }
